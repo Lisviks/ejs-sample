@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- <%- instead of <% to render raw HTML -->
+    <!-- Include partials -->
     <%- include('../partials/head'); %>
   </head>
   <body>
@@ -9,8 +9,19 @@
 
     <main>
       <div class="jumbotron">
-        <h1>This is great</h1>
-        <p>Welcome to templating using EJS</p>
+        <h1>Top Mascots</h1>
+        <!-- Single variable -->
+        <p><%= tagline %></p>
+        <ul>
+          <!-- Looping over data in EJS -->
+          <% mascots.forEach(function(mascot) { %>
+          <li>
+            <strong><%= mascot.name %></strong>
+            representing <%= mascot.organization %>, born <%= mascot.birth_year
+            %>
+          </li>
+          <% }); %>
+        </ul>
       </div>
     </main>
 

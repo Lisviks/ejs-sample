@@ -6,7 +6,18 @@ app.set('view engine', 'ejs');
 
 // index page
 app.get('/', (req, res) => {
-  res.render('pages/index');
+  const mascots = [
+    { name: 'Sammy', organization: 'DigitalOcean', birth_year: 2012 },
+    { name: 'Tux', organization: 'Linux', birth_year: 1996 },
+    { name: 'Moby Dock', organization: 'Docker', birth_year: 2013 },
+  ];
+  const tagline =
+    'No programming concept is complete without a cute animal mascot.';
+
+  res.render('pages/index', {
+    mascots,
+    tagline,
+  });
 });
 
 // about page
