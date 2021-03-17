@@ -4,7 +4,8 @@
     <%- include('../partials/head'); %>
   </head>
   <body class="container">
-    <header><%- include('../partials/header'); %></header>
+    <!-- Passing data to a partial -->
+    <header><%- include('../partials/header', {variant: 'compact'}); %></header>
 
     <main>
       <div class="row">
